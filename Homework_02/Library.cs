@@ -29,6 +29,7 @@ public static class Library
     public static void GetResult(int[,] matrix1, string position)
     {
         string compare = String.Empty;
+        int reserve=0;
         for (int i = 0; i < matrix1.GetLength(0); i++)
         {
             for (int j = 0; j < matrix1.GetLength(1); j++)
@@ -36,15 +37,15 @@ public static class Library
                 compare = compare + i + j;
                 if (compare == position)
                 {
+                    reserve = -1;
                     Console.WriteLine(matrix1[i, j]);
-                    
-                }
-                else
-                {
-                    Console.WriteLine("Нет такой позиции");
                 }
                 compare = String.Empty;
             }
+        }
+        if ( reserve != -1)
+        {
+            Console.WriteLine("Нет такой позиции");
         }
     }
     public static string GetPosition(string text)
