@@ -26,6 +26,32 @@ public static class Library
             Console.WriteLine();
         }
     }
+    public static void GetResult(int[,] matrix1, string position)
+    {
+        string compare = String.Empty;
+        for (int i = 0; i < matrix1.GetLength(0); i++)
+        {
+            for (int j = 0; j < matrix1.GetLength(1); j++)
+            {
+                compare = compare + i + j;
+                if (compare == position)
+                {
+                    Console.WriteLine(matrix1[i, j]);
+                    
+                }
+                else
+                {
+                    Console.WriteLine("Нет такой позиции");
+                }
+                compare = String.Empty;
+            }
+        }
+    }
+    public static string GetPosition(string text)
+    {
+        Console.WriteLine(text);
+        return Convert.ToString(Console.ReadLine());
+    }
 
 
 }
